@@ -1,0 +1,38 @@
+
+//REGISTRAR  ELEMENTO POR PRIMERA VES DE LA BODEGA ASEO//
+
+en el app.js => app.use("/bodega",bodega);// esta ruta sera la misma para el resto de este controlador y asi sera con los demas
+en routes/bodega.route.js => route.post('/registrar',registrarProducto);
+
+en pocas palabras la que manda es la de app.use /bodega , y la que sigue es route/bodega.route.js route.pos('registrar')
+
+endopint: POST
+localhost:3000/bodega/registrar   en thunder 
+
+body: 
+{
+  "nombre_producto": "Detergente",
+  "stock": 50,
+  "stock_minimo": 10,
+  "stock_maximo": 100
+}
+
+si esta bien aparecera respuesta 200 OK
+  {
+  "message": "Producto registrado correctamente."
+}
+
+
+
+//REGISTRAR ELEMENTOS YA EXISTENTES EN LA BODEGA_ASEO
+en el app.js => app.use("/bodega",bodega); ruta la misma para todo el controlador bodega
+en routes/bodega.route.js => route.post('/registrare',registrarEntradaStock);
+enpoint: POST
+
+localhost:3000/bodega/registrare
+
+tener en cuenta que este id_producto es el que vamos a dejar en el frontend el value
+{
+  "id_producto": 1,   
+  "cantidad": 20
+}

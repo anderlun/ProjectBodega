@@ -50,7 +50,7 @@ function Inicio() {
                       <li>• Edición y Eliminación</li>
                     </ul>
                   </div>
-    
+
                   {/* Salida de Elementos */}
                   <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow text-center">
                     <GiExitDoor className="text-blue-700 text-4xl mx-auto mb-4" />

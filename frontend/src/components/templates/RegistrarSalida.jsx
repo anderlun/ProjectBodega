@@ -236,7 +236,6 @@ const RegistrarSalida = () => {
           </div>
         </div>
 
-
       <div className="flex justify-start mt-6 mx-auto w-[900px]">
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg bg-white w-full">
         <table className="w-full text-sm text-left text-gray-800">
@@ -251,14 +250,15 @@ const RegistrarSalida = () => {
               </tr>
             </thead>
             <tbody>
-              {currentItems.map((salida) => (
+            {currentItems && currentItems.length > 0 ? (
+              currentItems.map((salida) => (
                 <tr key={salida.id} className="border-b hover:bg-gray-100">
                   <td className="px-6 py-4 text-center">{salida.bateria}</td>
                   <td className="px-6 py-4 text-center">{salida.producto}</td>
                   <td className="px-6 py-4 text-center">{salida.encargado}</td>
                   <td className="px-6 py-4 text-center">{salida.cantidad}</td>
                   <td className="px-6 py-4 text-center">
-                    {moment(salida.fecha_salida).format('DD-MM-YYYY HH:mm A')}
+                    {moment(salida.fecha_salida).format("DD-MM-YYYY HH:mm A")}
                   </td>
                   <td className="px-6 py-4 text-center">
                     <button
@@ -269,9 +269,15 @@ const RegistrarSalida = () => {
                       <span>Eliminar</span>
                     </button>
                   </td>
-
                 </tr>
-              ))}
+              ))
+            ) : (
+              <tr>
+                <td colSpan="6" className="text-center py-4">
+                  No hay productos registrados con ese nombre.
+                </td>
+              </tr>
+            )}
             </tbody>
           </table>
         </div>

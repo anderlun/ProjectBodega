@@ -19,9 +19,7 @@ function routes() {
         <Route path="/salida" element={<Salida/>} />  {/* esto de primero luego pasar al sidebar  */}
         <Route path="/encargados" element={<Encargados/>} />
         <Route path="/login" element={<Login />} />
-        
     </Routes>
   )
 }
-
-export default routes
+export default routes  

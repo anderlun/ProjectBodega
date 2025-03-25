@@ -7,8 +7,6 @@ import { FaEdit } from "react-icons/fa";
 
 import { FaUsers } from "react-icons/fa";
 
-
-
 function Encargados() {
   const [encargado, setEncargado] = useState([]); // Lista de encargados
   const [filteredEncargados, setFilteredEncargados] = useState([]); // Lista filtrada
@@ -17,8 +15,6 @@ function Encargados() {
   const [editingEncargado, setEditingEncargado] = useState(null); // Encargado en edición
   const [nombre_encargado, setNombreEncargado] = useState(""); // Nombre del encargado
   const [errors, setErrors] = useState({}); // Errores de validación
-
-
   // Paginación
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 4; // Número de elementos por página
@@ -35,17 +31,14 @@ function Encargados() {
       console.log(error);
     }
   };
-
   // Hook useEffect para cargar la lista de encargados
   useEffect(() => {
     listarEncargados();
   }, []);
-
   // Función para filtrar encargados basado en la búsqueda
   const handleSearchChange = (e) => {
     const query = e.target.value;
     setSearchQuery(query);
-
     if (query === "") {
       setFilteredEncargados(encargado); // Si la búsqueda está vacía, mostrar todos
     } else {
@@ -68,9 +61,9 @@ function Encargados() {
       );
       setFilteredEncargados(filtered); // Filtrar los encargados
     }
-    setCurrentPage(1); // Reiniciar a la primera página
+    setCurrentPage(1); // Reiniciar a la primera página     
   };
-
+  
   // Función para registrar un encargado
   const registrarEncargado = async () => {
     try {
@@ -253,7 +246,7 @@ function Encargados() {
               ) : (
                 <tr>
                   <td colSpan="2" className="text-center py-6 text-gray-500">
-                    No hay encargados registrados.
+                    No hay encargados registrados. 
                   </td>
                 </tr>
               )}
@@ -272,6 +265,7 @@ function Encargados() {
                   : "bg-black text-white hover:bg-gray-800 transition"
               }`}
               disabled={currentPage === 1}
+              
             >
               Anterior
             </button>
@@ -307,7 +301,7 @@ function Encargados() {
                   htmlFor="nombre_encargado"
                   className="block font-medium"
                 >
-                  Nombre del Encargado
+                  Nombre del Encargado 
                 </label>
                 <input
                   type="text"
@@ -322,6 +316,7 @@ function Encargados() {
                   </span>
                 )}
               </div>
+              
               <div className="flex justify-end">
                 <button
                   type="button"

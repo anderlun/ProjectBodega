@@ -274,7 +274,7 @@ const RegistrarSalida = () => {
             ) : (
               <tr>
                 <td colSpan="6" className="text-center py-4">
-                  No hay productos registrados con ese nombre.
+                  No hay registros de salidas hasta el momento.
                 </td>
               </tr>
             )}
